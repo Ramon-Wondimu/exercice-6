@@ -1,0 +1,47 @@
+/* ============ 1. RESET ============ */
+/* El reset ja és a reset.css, i allà ja hi ha el box-sizing.
+   Per això he esborrat el "* { box-sizing }" duplicat d'aquí. */
+
+/* ============ 2. VARIABLES ============ */
+:root {
+  --color-item: lightsalmon;
+  --color-sub-item: rgb(253, 213, 197);
+  --gap-main: 5px;
+  --gap-sub: 1rem;
+  --padding-item: 3rem;
+  --padding-sub: 1rem;
+}
+
+/* ============ 3. LAYOUT ============ */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: var(--gap-main);
+}
+
+.item-1,
+.item-5 {
+  grid-column: 1 / -1; /* ocupen de la primera a l'última columna */
+}
+
+.grid-container-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: var(--gap-sub);
+}
+
+/* ============ 4. COMPONENTS ============ */
+h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.grid-item {
+  background-color: var(--color-item);
+  padding: var(--padding-item);
+}
+
+.sub-item {
+  background-color: var(--color-sub-item);
+  padding: var(--padding-sub);
+}
